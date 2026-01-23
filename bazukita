@@ -3,12 +3,12 @@
 local KEYLESS = false
 
 if KEYLESS then
-  print("CyberCoders Menu Keyless")
+  print("KitK4t Hub Menu Keyless")
 else
-  print("Key System CyberCoders Menu")
-    end
+  print("Key System KitK4t Hub")
+end
   
-local CyberCodersModule = {}
+local KitK4tModule = {}
 
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
@@ -79,7 +79,7 @@ do
     end
 end
 
-function CyberCodersModule.Show(callback)
+function KitK4tModule.Show(callback)
     callback = callback or function() end
 
     if KEYLESS then
@@ -88,7 +88,7 @@ function CyberCodersModule.Show(callback)
     end
 
     local gui = Instance.new("ScreenGui")
-    gui.Name = "CyberCodersKeyUI"
+    gui.Name = "KitK4tHubKeyUI"
     gui.ResetOnSpawn = false
     gui.Parent = lp:WaitForChild("PlayerGui")
 
@@ -96,22 +96,22 @@ function CyberCodersModule.Show(callback)
     main.Size = UDim2.fromScale(0.65, 0.85)
     main.Position = UDim2.fromScale(0.5, 0.5)
     main.AnchorPoint = Vector2.new(0.5, 0.5)
-    main.BackgroundColor3 = Color3.fromRGB(12, 10, 22)
+    main.BackgroundColor3 = Color3.fromRGB(18, 8, 8)
     main.BorderSizePixel = 0
     Instance.new("UICorner", main).CornerRadius = UDim.new(0, 28)
 
     local stroke = Instance.new("UIStroke", main)
     stroke.Thickness = 2
-    stroke.Color = Color3.fromRGB(170, 90, 255)
-    stroke.Transparency = 0.15
+    stroke.Color = Color3.fromRGB(255, 70, 70) -- vermelho
+    stroke.Transparency = 0.1
 
     local title = Instance.new("TextLabel", main)
     title.Size = UDim2.fromScale(1, 0.18)
     title.BackgroundTransparency = 1
-    title.Text = "CyberCoders Menu"
+    title.Text = "KitK4t Hub"
     title.Font = Enum.Font.GothamBlack
     title.TextSize = 44
-    title.TextColor3 = Color3.fromRGB(190, 120, 255)
+    title.TextColor3 = Color3.fromRGB(255, 90, 90)
 
     local subtitle = Instance.new("TextLabel", main)
     subtitle.Position = UDim2.fromScale(0, 0.16)
@@ -120,9 +120,8 @@ function CyberCodersModule.Show(callback)
     subtitle.Text = "KEY SYSTEM"
     subtitle.Font = Enum.Font.GothamBold
     subtitle.TextSize = 20
-    subtitle.TextColor3 = Color3.fromRGB(215, 180, 255)
+    subtitle.TextColor3 = Color3.fromRGB(255, 160, 160)
 
-    
     local mascotHolder = Instance.new("Frame", main)
     mascotHolder.Position = UDim2.fromScale(0.5, 0.37)
     mascotHolder.Size = UDim2.fromScale(0.22, 0.22)
@@ -152,7 +151,7 @@ function CyberCodersModule.Show(callback)
     mascotText.Text = "Waiting for the key to be entered..."
     mascotText.Font = Enum.Font.GothamBold
     mascotText.TextSize = 18
-    mascotText.TextColor3 = Color3.fromRGB(200,195,225)
+    mascotText.TextColor3 = Color3.fromRGB(255,200,200)
 
     local box = Instance.new("TextBox", main)
     box.Position = UDim2.fromScale(0.1, 0.6)
@@ -161,7 +160,7 @@ function CyberCodersModule.Show(callback)
     box.Font = Enum.Font.Gotham
     box.TextSize = 20
     box.TextColor3 = Color3.fromRGB(255,255,255)
-    box.BackgroundColor3 = Color3.fromRGB(22,18,40)
+    box.BackgroundColor3 = Color3.fromRGB(35,10,10)
     box.BorderSizePixel = 0
     Instance.new("UICorner", box).CornerRadius = UDim.new(0,16)
 
@@ -172,7 +171,7 @@ function CyberCodersModule.Show(callback)
     verify.Font = Enum.Font.GothamBold
     verify.TextSize = 22
     verify.TextColor3 = Color3.fromRGB(255,255,255)
-    verify.BackgroundColor3 = Color3.fromRGB(135,85,255)
+    verify.BackgroundColor3 = Color3.fromRGB(220, 60, 60)
     verify.BorderSizePixel = 0
     Instance.new("UICorner", verify).CornerRadius = UDim.new(0,18)
 
@@ -182,12 +181,11 @@ function CyberCodersModule.Show(callback)
     getkey.Text = "Copy Key Link"
     getkey.Font = Enum.Font.GothamBold
     getkey.TextSize = 18
-    getkey.TextColor3 = Color3.fromRGB(30,20,50)
-    getkey.BackgroundColor3 = Color3.fromRGB(200,180,255)
+    getkey.TextColor3 = Color3.fromRGB(60,0,0)
+    getkey.BackgroundColor3 = Color3.fromRGB(255,180,180)
     getkey.BorderSizePixel = 0
     Instance.new("UICorner", getkey).CornerRadius = UDim.new(0,14)
 
-    
     local howtoget = Instance.new("TextButton", main)
     howtoget.Position = UDim2.fromScale(0.1, 0.915)
     howtoget.Size = UDim2.fromScale(0.8, 0.065)
@@ -195,7 +193,7 @@ function CyberCodersModule.Show(callback)
     howtoget.Font = Enum.Font.GothamBold
     howtoget.TextSize = 16
     howtoget.TextColor3 = Color3.fromRGB(255,255,255)
-    howtoget.BackgroundColor3 = Color3.fromRGB(200,0,0)
+    howtoget.BackgroundColor3 = Color3.fromRGB(180, 0, 0)
     howtoget.BorderSizePixel = 0
     Instance.new("UICorner", howtoget).CornerRadius = UDim.new(0,14)
 
@@ -209,13 +207,13 @@ function CyberCodersModule.Show(callback)
     getkey.MouseButton1Click:Connect(function()
         Platoboost.CopyLink()
         mascotText.Text = "Key link copied! Paste it in your browser."
-        mascotText.TextColor3 = Color3.fromRGB(180,160,255)
+        mascotText.TextColor3 = Color3.fromRGB(255,170,170)
     end)
 
     howtoget.MouseButton1Click:Connect(function()
         setClipboard("https://youtu.be/0FTJx-TYto4?si=DpQY6z_EEFZIpJUu")
         mascotText.Text = "Tutorial link copied! Watch the video to get the key."
-        mascotText.TextColor3 = Color3.fromRGB(255,180,180)
+        mascotText.TextColor3 = Color3.fromRGB(255,140,140)
     end)
 
     verify.MouseButton1Click:Connect(function()
@@ -228,9 +226,9 @@ function CyberCodersModule.Show(callback)
             callback(true)
         else
             mascotText.Text = "Invalid Key"
-            mascotText.TextColor3 = Color3.fromRGB(255,90,90)
+            mascotText.TextColor3 = Color3.fromRGB(255,80,80)
         end
     end)
 end
 
-return CyberCodersModule
+return KitK4tModule
